@@ -1,49 +1,48 @@
+<script setup lang="ts">
+import type { NavigationMenuItem } from '@nuxt/ui'
+
+defineProps<{
+  links: NavigationMenuItem[]
+}>()
+
+const navLinks: NavigationMenuItem[] = [{
+  label: 'Главная',
+  icon: 'i-lucide-home',
+  to: '/'
+}, {
+  label: 'Проекты',
+  icon: 'i-lucide-folder',
+  to: '/projects'
+}, {
+  label: 'Новости',
+  icon: 'i-lucide-file-text',
+  to: '/blog'
+}, {
+  label: 'Распевки',
+  icon: 'i-lucide-mic',
+  to: '/speaking'
+}, {
+  label: 'Обо мне',
+  icon: 'i-lucide-user',
+  to: '/about'
+}]
+</script>
+
 <template>
-  <UDropdownMenu
-    v-slot="{ open }"
-    :modal="false"
-    :items="[{
-      label: 'Starter',
-      to: 'https://starter-template.nuxt.dev/',
-      color: 'primary',
-      checked: true,
-      type: 'checkbox'
-    }, {
-      label: 'Landing',
-      to: 'https://landing-template.nuxt.dev/'
-    }, {
-      label: 'Docs',
-      to: 'https://docs-template.nuxt.dev/'
-    }, {
-      label: 'SaaS',
-      to: 'https://saas-template.nuxt.dev/'
-    }, {
-      label: 'Dashboard',
-      to: 'https://dashboard-template.nuxt.dev/'
-    }, {
-      label: 'Chat',
-      to: 'https://chat-template.nuxt.dev/'
-    }, {
-      label: 'Portfolio',
-      to: 'https://portfolio-template.nuxt.dev/'
-    }, {
-      label: 'Changelog',
-      to: 'https://changelog-template.nuxt.dev/'
-    }]"
-    :content="{ align: 'start' }"
-    :ui="{ content: 'min-w-fit' }"
-    size="xs"
-  >
-    <UButton
-      label="Starter"
-      variant="subtle"
-      trailing-icon="i-lucide-chevron-down"
-      size="xs"
-      class="-mb-[6px] font-semibold rounded-full truncate"
-      :class="[open && 'bg-primary/15']"
+  <div class="fixed top-2 sm:top-4 mx-auto left-1/2 transform -translate-x-1/2 z-10">
+    <UNavigationMenu
+      :items="navLinks"
+      variant="link"
+      color="neutral"
+      class="bg-muted/80 backdrop-blur-sm rounded-full px-2 sm:px-4 border border-muted/50 shadow-lg shadow-neutral-950/5"
       :ui="{
-        trailingIcon: ['transition-transform duration-200', open ? 'rotate-180' : undefined].filter(Boolean).join(' ')
+        link: 'px-2 py-1',
+        linkLeadingIcon: 'hidden'
       }"
-    />
-  </UDropdownMenu>
+    >
+      <template #list-trailing>
+        <ColorModeButton />
+      </template>
+    </UNavigationMenu>
+  </div>
 </template>
