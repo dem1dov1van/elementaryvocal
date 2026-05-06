@@ -15,15 +15,37 @@ const page = {
       }
     ],
     images: [
-      { src: '/hero/random-1.avif', alt: 'Фото с занятия 1 *' },
-      { src: '/hero/random-2.avif', alt: 'Фото с занятия 2 *' },
-      { src: '/hero/random-3.avif', alt: 'Фото с занятия 3 *' },
-      { src: '/hero/random-4.avif', alt: 'Фото с занятия 4 *' },
-      { src: '/hero/random-5.avif', alt: 'Фото с занятия 5 *' },
-      { src: '/hero/random-6.avif', alt: 'Фото с занятия 6 *' },
-      { src: '/hero/random-7.avif', alt: 'Фото с занятия 7 *' },
-      { src: '/hero/random-8.avif', alt: 'Фото с занятия 8 *' },
-      { src: '/hero/random-9.avif', alt: 'Фото с занятия 9 *' }
+      { src: '/images/slider/1.png', alt: 'Фото с занятия 1 *' },
+      { src: '/images/slider/2.png', alt: 'Фото с занятия 2 *' },
+      { src: '/images/slider/3.png', alt: 'Фото с занятия 3 *' },
+      { src: '/images/slider/4.png', alt: 'Фото с занятия 4 *' },
+      { src: '/images/slider/5.png', alt: 'Фото с занятия 5 *' },
+      { src: '/images/slider/6.png', alt: 'Фото с занятия 6 *' },
+      { src: '/images/slider/7.png', alt: 'Фото с занятия 7 *' },
+      { src: '/images/slider/8.png', alt: 'Фото с занятия 8 *' },
+      { src: '/images/slider/9.png', alt: 'Фото с занятия 9 *' }
+    ],
+    videos: [
+      {
+        src: 'https://www.youtube.com/embed/8SyQkawL2Bc',
+        title: 'YouTube Shorts 1'
+      },
+      {
+        src: 'https://www.youtube.com/embed/A5jTYjskIag',
+        title: 'YouTube Shorts 2'
+      },
+      {
+        src: 'https://www.youtube.com/embed/A2AeFGOcSEI',
+        title: 'YouTube Shorts 3'
+      },
+      {
+        src: 'https://www.youtube.com/embed/bIrHcqiuAss',
+        title: 'YouTube Shorts 4'
+      },
+      {
+        src: 'https://www.youtube.com/embed/lmYWxkr9Akk',
+        title: 'YouTube Shorts 5'
+      }
     ]
   },
   about: {
@@ -187,5 +209,7 @@ useSeoMeta({
     <LandingBlog :page />
     <LandingTestimonials :page />
     <LandingFAQ :page />
+
+    <MapSection />
   </UPage>
 </template>

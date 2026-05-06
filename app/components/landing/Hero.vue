@@ -10,6 +10,10 @@ type HeroPage = {
   hero: {
     links?: Record<string, unknown>[]
     images: HeroImage[]
+    videos?: {
+      src: string
+      title: string
+    }[]
   }
 }
 
@@ -216,6 +220,42 @@ defineProps<{
           loading="lazy"
           decoding="async"
         >
+      </Motion>
+    </UMarquee>
+
+    <UMarquee
+      v-if="page.hero.videos?.length"
+      pause-on-hover
+      reverse
+      class="py-2 -mx-8 sm:-mx-12 lg:-mx-16 [--duration:48s]"
+    >
+      <Motion
+        v-for="(video, index) in page.hero.videos"
+        :key="`${video.src}-${index}`"
+        :initial="{
+          scale: 1.06,
+          opacity: 0,
+          filter: 'blur(20px)'
+        }"
+        :animate="{
+          scale: 1,
+          opacity: 1,
+          filter: 'blur(0px)'
+        }"
+        :transition="{
+          duration: 0.6,
+          delay: Number(index) * 0.1
+        }"
+      >
+        <iframe
+          class="rounded-lg aspect-[9/16] h-[320px] w-[180px] sm:h-[360px] sm:w-[203px] border border-default"
+          :src="video.src"
+          :title="video.title"
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        />
       </Motion>
     </UMarquee>
   </UPageHero>
