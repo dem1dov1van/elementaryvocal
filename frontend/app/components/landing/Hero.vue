@@ -143,7 +143,6 @@ defineProps<{
             variant="ghost"
             class="gap-2"
             :to="appGlobal.available ? appGlobal.meetingLink : ''"
-            :label="appGlobal.available ? 'Идет запись на занятия' : 'Набор временно закрыт'"
           >
             <template #leading>
               <span class="relative flex size-2">

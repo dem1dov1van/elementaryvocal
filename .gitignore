@@ -22,3 +22,6 @@ frontend/logs
 .env
 .env.*
 !.env.example
+
+# PocketBase local data
+pb_data

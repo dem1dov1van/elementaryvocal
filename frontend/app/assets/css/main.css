@@ -1,8 +1,11 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
+@import "@fontsource-variable/inter";
+@import "@fontsource-variable/lora";
 
 @theme static {
-  --font-sans: 'Public Sans', sans-serif;
+  --font-sans: 'Inter Variable', 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: 'Lora Variable', 'Lora', ui-serif, Georgia, serif;
 
   --color-green-50: #EFFDF5;
   --color-green-100: #D9FBE8;
@@ -26,4 +29,24 @@
   --color-red-700: #B91C1C;
   --color-red-800: #991B1B;
   --color-red-900: #7F1D1D;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    font-feature-settings: "cv11", "ss01";
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-serif);
+    letter-spacing: -0.01em;
+  }
+}
+
+.link {
+  text-decoration: underline;
 }

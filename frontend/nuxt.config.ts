@@ -5,11 +5,21 @@ export default defineNuxtConfig({
     '@nuxt/ui'
   ],
 
+  ui: {
+    fonts: false
+  },
+
   devtools: {
     enabled: true
   },
 
   css: ['~/assets/css/main.css'],
+
+  runtimeConfig: {
+    public: {
+      pocketbaseUrl: '/api'
+    }
+  },
 
   routeRules: {
     '/': { prerender: true }

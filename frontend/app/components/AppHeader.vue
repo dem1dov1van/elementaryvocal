@@ -7,11 +7,11 @@ const navLinks: NavigationMenuItem[] = [
     icon: 'i-lucide-home',
     to: '/'
   },
-  {
-    label: 'Проекты',
-    icon: 'i-lucide-folder',
-    to: '/projects'
-  },
+  // {
+  //   label: 'Проекты',
+  //   icon: 'i-lucide-folder',
+  //   to: '/projects'
+  // },
   // {
   //   label: 'Новости',
   //   icon: 'i-lucide-file-text',

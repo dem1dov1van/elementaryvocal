@@ -1,15 +1,5 @@
 <template>
   <div>
-    <h1 class="text-red-500">
-      Распевки
-    </h1>
-    <div class="w-[600px]">
-      <audioItem
-        v-for="i in 6"
-        :key="i"
-        :track="audio"
-      />
-    </div>
     <UPageHero
       title="Распевки для комфортного звучания"
       description="Практические упражнения для разогрева голоса перед занятием, репетицией или выступлением. *"
@@ -17,7 +7,6 @@
         label: 'Записаться на занятие',
         to: 'https://t.me/rodinaalexandra',
         target: '_blank',
-        trailingIcon: 'i-lucide-arrow-right',
         size: 'xl'
       }, {
         label: 'Telegram-канал',
@@ -30,7 +19,31 @@
       }]"
     />
 
+    <Containter class="!pt-0">
+      <div class="min-w-full max-w-[600px] mx-auto">
+        <p v-if="pending">
+          Загружаем распевки...
+        </p>
+        <p
+          v-else-if="error"
+          class="text-red-500"
+        >
+          Не удалось загрузить распевки
+        </p>
+
+        <div class="max-w-[100%] w-full mx-auto p-4">
+          <UInputTags class="max-w-[100%] w-full mx-auto p-4" placeholder="Введи теги..." />
+        </div>
+        <AudioItem
+          v-for="track in tracks"
+          :key="track.id"
+          :track="track"
+        />
+      </div>
+    </Containter>
+
     <UPageSection
+      class="!pb-0"
       id="features"
       title="Что дают регулярные распевки"
       description="Короткие упражнения помогают голосу звучать свободнее и стабильнее. *"
@@ -85,11 +98,51 @@
   </div>
 </template>
 
-<script setup>
-import audioItem from '~/components/AudioItem.vue'
+<script setup lang="ts">
+import Containter from '~/components/Containter.vue'
+type WarmUpRecord = {
+  id: string
+  collectionId: string
+  title: string
+  description: string
+  audio: string
+}
 
-const audio = ref({
-  title: 'Распевка 1',
-  src: '/audio/warm-up.mp3'
+type WarmUpResponse = {
+  items: WarmUpRecord[]
+}
+
+const config = useRuntimeConfig()
+const apiBase = process.server
+  ? 'http://pocketbase:8090/api'
+  : config.public.pocketbaseUrl
+
+const { data: warmUpResponse, pending, error } = await useAsyncData<WarmUpResponse>(
+  'warmups',
+  async () => {
+    const response = await fetch(`${apiBase}/collections/warmups/records?sort=-created`)
+
+    if (!response.ok) {
+      throw new Error(`PocketBase request failed with status ${response.status}`)
+    }
+
+    return await response.json() as WarmUpResponse
+  },
+  {
+    default: () => ({
+      items: []
+    })
+  }
+)
+
+const tracks = computed(() => {
+  return (warmUpResponse.value?.items ?? []).map((record) => ({
+    id: record.id,
+    title: record.title,
+    src: `${config.public.pocketbaseUrl}/files/${record.collectionId}/${record.id}/${record.audio}`,
+    description: record.description,
+    tags: record.tags.split(' ')
+  }))
 })
+
 </script>

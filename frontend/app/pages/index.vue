@@ -58,8 +58,8 @@ const page = {
     title: 'Опыт и направления',
     items: [
       {
-        position: 'Преподаватель эстрадного вокала',
-        date: 'Более 20 лет практики',
+        position: 'Преподаватель вокала',
+        date: '3',
         company: {
           name: 'Elementaryvocal',
           logo: 'i-simple-icons-nuxtdotjs',
@@ -68,8 +68,8 @@ const page = {
         }
       },
       {
-        position: 'Подготовка начинающих вокалистов',
-        date: 'Еще одно место',
+        position: 'Подготовка вокалистов',
+        date: '2',
         company: {
           name: 'Частная практика',
           logo: 'i-simple-icons-raycast',
@@ -79,7 +79,7 @@ const page = {
       },
       {
         position: 'Онлайн-занятия*',
-        date: 'Еще одно место',
+        date: '1',
         company: {
           name: 'Вокальная школа',
           logo: 'i-simple-icons-linear',
@@ -158,7 +158,7 @@ const page = {
           },
           {
             label: 'Где можно следить за новостями школы?',
-            content: 'Больше интересного в Telegram-канале. Присоединяйтесь! *'
+            content: 'Больше интересного в <a href="https://t.me/rodinaalexandra" target="_blank">Telegram-канале</a>. Присоединяйтесь! *'
           },
           {
             label: 'Куда отправлять коммерческие предложения?',
@@ -193,10 +193,69 @@ useSeoMeta({
   description: page.seo.description || page.description,
   ogDescription: page.seo.description || page.description
 })
+
+const itemsFormat = ref([
+  {
+    label: 'Кому подойдут занятия?',
+    icon: 'i-lucide-plus',
+    content: 'Занятия будут полезны как начинающим, так и профессиональным вокалистам.'
+  },
+  {
+    label: 'Что будем делать на уроках?',
+    icon: 'i-lucide-plus',
+    content: 'На уроках мы работаем над свободным и комфортным звучанием, дыханием, интонацией и подачей материала. *'
+  },
+  {
+    label: 'Можно ли заниматься онлайн?',
+    icon: 'i-lucide-plus',
+    slot: 'online'
+  }
+])
+
+const itemsRecord = ref([
+  {
+    label: 'Как записаться на первое занятие?',
+    icon: 'i-lucide-plus',
+    content: 'Записывайтесь на первое занятие: https://t.me/rodinaalexandra'
+  },
+  {
+    label: 'Где можно следить за новостями школы?',
+    icon: 'i-lucide-plus',
+    content: 'Больше интересного в <a href="https://t.me/rodinaalexandra" target="_blank">Telegram-канале</a>. Присоединяйтесь! *'
+  }
+])
+
+const itemsAdditional = ref([
+  {
+    label: 'Есть ли пробный формат?',
+    icon: 'i-lucide-plus',
+    content: 'Да, на первом занятии знакомимся, определяем цель и подбираем индивидуальный план развития голоса. *'
+  },
+  {
+    label: 'Нужна ли музыкальная подготовка?',
+    icon: 'i-lucide-plus',
+    content: 'Нет, начать можно с любого уровня. Программа подстраивается под ваш текущий опыт. *'
+  }
+])
+
+const tabs = ref([
+  {
+    label: 'Формат занятий',
+    slot: 'format'
+  },
+  {
+    label: 'Запись и условия',
+    slot: 'record'
+  },
+  {
+    label: 'Дополнительно',
+    slot: 'additional'
+  }
+])
 </script>
 
 <template>
-  <UPage>
+  <UPage class="overflow-x-hidden">
     <LandingHero :page />
     <UPageSection
       :ui="{
@@ -208,8 +267,32 @@ useSeoMeta({
     </UPageSection>
     <LandingBlog :page />
     <LandingTestimonials :page />
-    <LandingFAQ :page />
+    <!-- <LandingFAQ :page /> -->
 
+    <UPageSection title="Частые вопросы">
+        <div class="overflow-x-auto">
+        <UTabs :unmount-on-hide="false" :items="tabs" class="w-full">
+          <template #format>
+            <UAccordion :items="itemsFormat" :ui="{
+              trigger: 'gap-3',
+              leadingIcon: 'block size-5 shrink-0 text-primary'
+            }" />
+          </template>
+          <template #record>
+            <UAccordion :items="itemsRecord" :ui="{
+              trigger: 'gap-3',
+              leadingIcon: 'block size-5 shrink-0 text-primary'
+            }" />
+          </template>
+          <template #additional>
+            <UAccordion :items="itemsAdditional" :ui="{
+              trigger: 'gap-3',
+              leadingIcon: 'block size-5 shrink-0 text-primary'
+            }" />
+          </template>
+        </UTabs>
+        </div>
+    </UPageSection>
     <MapSection />
   </UPage>
 </template>
