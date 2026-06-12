@@ -1,6 +1,22 @@
 <script setup lang="ts">
+type ExperiencePage = {
+  experience: {
+    title: string
+    items: {
+      position: string
+      date: string
+      company: {
+        name: string
+        logo: string
+        url: string
+        color: string
+      }
+    }[]
+  }
+}
+
 defineProps<{
-  page: any
+  page: ExperiencePage
 }>()
 </script>
 

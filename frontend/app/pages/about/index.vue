@@ -3,7 +3,6 @@
 
 <template>
   <UPage>
-    <UPageSection title="В разработке...">
-    </UPageSection>
+    <UPageSection title="В разработке..." />
   </UPage>
 </template>

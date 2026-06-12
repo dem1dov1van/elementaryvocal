@@ -5,15 +5,15 @@ export default defineNuxtConfig({
     '@nuxt/ui'
   ],
 
-  ui: {
-    fonts: false
-  },
-
   devtools: {
     enabled: true
   },
 
   css: ['~/assets/css/main.css'],
+
+  ui: {
+    fonts: false
+  },
 
   runtimeConfig: {
     public: {

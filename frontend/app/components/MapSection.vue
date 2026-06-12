@@ -6,7 +6,7 @@
     loading="lazy"
     allowfullscreen
     referrerpolicy="no-referrer-when-downgrade"
-  ></iframe>
+  />
 </template>
 
 <script setup lang="ts">

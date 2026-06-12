@@ -1,10 +1,28 @@
 <script setup lang="ts">
+type FaqQuestion = {
+  label: string
+  content: string
+}
+
+type FaqCategory = {
+  title: string
+  questions: FaqQuestion[]
+}
+
+type FaqPage = {
+  faq: {
+    title: string
+    description: string
+    categories: FaqCategory[]
+  }
+}
+
 const props = defineProps<{
-  page: any
+  page: FaqPage
 }>()
 
 const items = computed(() => {
-  return props.page.faq?.categories.map((faq: { title: string, questions: any[] }) => {
+  return props.page.faq?.categories.map((faq) => {
     return {
       label: faq.title,
       key: faq.title.toLowerCase(),

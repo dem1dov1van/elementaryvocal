@@ -19,7 +19,7 @@
       }]"
     />
 
-    <Containter class="!pt-0">
+    <AppContainer class="!pt-0">
       <div class="min-w-full max-w-[600px] mx-auto">
         <p v-if="pending">
           Загружаем распевки...
@@ -32,7 +32,10 @@
         </p>
 
         <div class="max-w-[100%] w-full mx-auto p-4">
-          <UInputTags class="max-w-[100%] w-full mx-auto p-4" placeholder="Введи теги..." />
+          <UInputTags
+            class="max-w-[100%] w-full mx-auto p-4"
+            placeholder="Введи теги..."
+          />
         </div>
         <AudioItem
           v-for="track in tracks"
@@ -40,11 +43,11 @@
           :track="track"
         />
       </div>
-    </Containter>
+    </AppContainer>
 
     <UPageSection
-      class="!pb-0"
       id="features"
+      class="!pb-0"
       title="Что дают регулярные распевки"
       description="Короткие упражнения помогают голосу звучать свободнее и стабильнее. *"
       :features="[{
@@ -99,7 +102,6 @@
 </template>
 
 <script setup lang="ts">
-import Containter from '~/components/Containter.vue'
 type WarmUpRecord = {
   id: string
   collectionId: string
@@ -113,7 +115,7 @@ type WarmUpResponse = {
 }
 
 const config = useRuntimeConfig()
-const apiBase = process.server
+const apiBase = import.meta.server
   ? 'http://pocketbase:8090/api'
   : config.public.pocketbaseUrl
 
@@ -136,7 +138,7 @@ const { data: warmUpResponse, pending, error } = await useAsyncData<WarmUpRespon
 )
 
 const tracks = computed(() => {
-  return (warmUpResponse.value?.items ?? []).map((record) => ({
+  return (warmUpResponse.value?.items ?? []).map(record => ({
     id: record.id,
     title: record.title,
     src: `${config.public.pocketbaseUrl}/files/${record.collectionId}/${record.id}/${record.audio}`,
@@ -144,5 +146,4 @@ const tracks = computed(() => {
     tags: record.tags.split(' ')
   }))
 })
-
 </script>

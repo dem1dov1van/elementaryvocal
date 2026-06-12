@@ -270,28 +270,41 @@ const tabs = ref([
     <!-- <LandingFAQ :page /> -->
 
     <UPageSection title="Частые вопросы">
-        <div class="overflow-x-auto">
-        <UTabs :unmount-on-hide="false" :items="tabs" class="w-full">
+      <div class="overflow-x-auto">
+        <UTabs
+          :unmount-on-hide="false"
+          :items="tabs"
+          class="w-full"
+        >
           <template #format>
-            <UAccordion :items="itemsFormat" :ui="{
-              trigger: 'gap-3',
-              leadingIcon: 'block size-5 shrink-0 text-primary'
-            }" />
+            <UAccordion
+              :items="itemsFormat"
+              :ui="{
+                trigger: 'gap-3',
+                leadingIcon: 'block size-5 shrink-0 text-primary'
+              }"
+            />
           </template>
           <template #record>
-            <UAccordion :items="itemsRecord" :ui="{
-              trigger: 'gap-3',
-              leadingIcon: 'block size-5 shrink-0 text-primary'
-            }" />
+            <UAccordion
+              :items="itemsRecord"
+              :ui="{
+                trigger: 'gap-3',
+                leadingIcon: 'block size-5 shrink-0 text-primary'
+              }"
+            />
           </template>
           <template #additional>
-            <UAccordion :items="itemsAdditional" :ui="{
-              trigger: 'gap-3',
-              leadingIcon: 'block size-5 shrink-0 text-primary'
-            }" />
+            <UAccordion
+              :items="itemsAdditional"
+              :ui="{
+                trigger: 'gap-3',
+                leadingIcon: 'block size-5 shrink-0 text-primary'
+              }"
+            />
           </template>
         </UTabs>
-        </div>
+      </div>
     </UPageSection>
     <MapSection />
   </UPage>

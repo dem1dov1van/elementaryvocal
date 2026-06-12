@@ -1,6 +1,13 @@
 <script setup lang="ts">
+type AboutPage = {
+  about: {
+    title: string
+    description: string
+  }
+}
+
 defineProps<{
-  page: any
+  page: AboutPage
 }>()
 </script>
 
