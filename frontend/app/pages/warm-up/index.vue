@@ -5,12 +5,12 @@
       description="Практические упражнения для разогрева голоса перед занятием, репетицией или выступлением. *"
       :links="[{
         label: 'Записаться на занятие',
-        to: 'https://t.me/rodinaalexandra',
+        to: 'https://n2254899.yclients.com',
         target: '_blank',
         size: 'xl'
       }, {
         label: 'Telegram-канал',
-        to: 'https://t.me/rodinaalexandra',
+        to: 'https://t.me/elementaryvocal',
         target: '_blank',
         icon: 'i-simple-icons-telegram',
         size: 'xl',
@@ -80,19 +80,17 @@
     <UPageSection>
       <UPageCTA
         title="Готовы начать занятия вокалом?"
-        description="Записывайтесь на первое занятие и получите индивидуальные рекомендации по развитию голоса."
+        description="Записывайтесь на&nbsp;первое занятие и&nbsp;получите индивидуальные рекомендации по&nbsp;развитию голоса."
         variant="subtle"
         :links="[{
-          label: 'Записаться в Telegram',
-          to: 'https://t.me/rodinaalexandra',
+          label: 'Записаться',
+          to: 'https://n2254899.yclients.com',
           target: '_blank',
-          trailingIcon: 'i-lucide-arrow-right',
           color: 'neutral'
         }, {
           label: 'Написать на почту',
           to: 'mailto:Elementaryvocal@ya.ru',
           target: '_blank',
-          icon: 'i-lucide-mail',
           color: 'neutral',
           variant: 'outline'
         }]"

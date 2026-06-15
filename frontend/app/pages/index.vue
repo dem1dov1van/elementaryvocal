@@ -1,16 +1,17 @@
 <script setup lang="ts">
 const page = {
   seo: {
-    title: 'Elementaryvocal - уроки эстрадного вокала',
-    description: 'Добро пожаловать на канал вокальной школы Elementeryvocal. Меня зовут Александра Родина, я преподаватель эстрадного вокала с опытом в вокальной сфере более 20 лет.'
+    title: 'Школа вокала Александры Родиной — Elementaryvocal',
+    description: 'Пой легко и с удовольствием. Обучение для начинающих и профессионалов от эксперта с 20-летним опытом.'
   },
-  title: 'Добро пожаловать в вокальную школу Elementeryvocal',
-  description: 'Меня зовут Александра Родина. На протяжении многих лет я помогаю вокалистам звучать свободнее и комфортнее, петь легко и с удовольствием. Мои уроки и знания будут полезны как начинающим, так и профессиональным вокалистам.',
+  title: 'Школа вокала Александры Родиной',
+  description: 'Пой легко и с удовольствием. Обучение для начинающих и профессионалов от эксперта с 20-летним опытом.',
   hero: {
     links: [
       {
-        label: 'Записаться на первое занятие',
-        to: 'https://t.me/rodinaalexandra',
+        label: 'Записаться на занятие',
+        to: 'https://n2254899.yclients.com',
+        target: '_blank',
         color: 'neutral'
       }
     ],
@@ -24,109 +25,7 @@ const page = {
       { src: '/images/slider/7.png', alt: 'Фото с занятия 7 *' },
       { src: '/images/slider/8.png', alt: 'Фото с занятия 8 *' },
       { src: '/images/slider/9.png', alt: 'Фото с занятия 9 *' }
-    ],
-    videos: [
-      {
-        src: 'https://www.youtube.com/embed/8SyQkawL2Bc',
-        title: 'YouTube Shorts 1'
-      },
-      {
-        src: 'https://www.youtube.com/embed/A5jTYjskIag',
-        title: 'YouTube Shorts 2'
-      },
-      {
-        src: 'https://www.youtube.com/embed/A2AeFGOcSEI',
-        title: 'YouTube Shorts 3'
-      },
-      {
-        src: 'https://www.youtube.com/embed/bIrHcqiuAss',
-        title: 'YouTube Shorts 4'
-      },
-      {
-        src: 'https://www.youtube.com/embed/lmYWxkr9Akk',
-        title: 'YouTube Shorts 5'
-      }
     ]
-  },
-  about: {
-    title: 'О преподавателе',
-    description: `Меня зовут Александра Родина, я преподаватель эстрадного вокала с опытом в вокальной сфере более 20 лет.
-На протяжении многих лет я помогаю вокалистам звучать свободнее и комфортнее, петь легко и с удовольствием.
-Мои уроки и знания будут полезны как начинающим, так и профессиональным вокалистам.`
-  },
-  experience: {
-    title: 'Опыт и направления',
-    items: [
-      {
-        position: 'Преподаватель вокала',
-        date: '3',
-        company: {
-          name: 'Elementaryvocal',
-          logo: 'i-simple-icons-nuxtdotjs',
-          url: 'https://t.me/rodinaalexandra',
-          color: '#00DC82'
-        }
-      },
-      {
-        position: 'Подготовка вокалистов',
-        date: '2',
-        company: {
-          name: 'Частная практика',
-          logo: 'i-simple-icons-raycast',
-          url: 'https://t.me/rodinaalexandra',
-          color: '#FF6363'
-        }
-      },
-      {
-        position: 'Онлайн-занятия*',
-        date: '1',
-        company: {
-          name: 'Вокальная школа',
-          logo: 'i-simple-icons-linear',
-          url: 'https://t.me/rodinaalexandra',
-          color: '#5E6AD2'
-        }
-      }
-    ]
-  },
-  testimonials: [
-    {
-      quote: 'После нескольких занятий я перестала зажиматься и впервые почувствовала, что могу петь свободно и уверенно. Уроки проходят очень бережно и понятно. *',
-      author: {
-        name: 'Марина',
-        description: 'Ученица вокальной школы *',
-        avatar: {
-          src: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=40&h=40&q=80',
-          srcset: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=80&h=80&q=80 2x'
-        }
-      }
-    },
-    {
-      quote: 'Мне нравится, что на уроках есть система: дыхание, опора, работа с диапазоном и эмоцией. Я стала намного увереннее на выступлениях. *',
-      author: {
-        name: 'Илья',
-        description: 'Вокалист и автор песен *',
-        avatar: {
-          src: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=40&h=40&q=80',
-          srcset: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=80&h=80&q=80 2x'
-        }
-      }
-    },
-    {
-      quote: 'Даже после долгого перерыва в пении я быстро вернулась в форму. Уроки помогают снять зажимы и получать удовольствие от процесса. *',
-      author: {
-        name: 'Екатерина',
-        description: 'Исполнительница и преподаватель музыки *',
-        avatar: {
-          src: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=40&h=40&q=80',
-          srcset: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=80&h=80&q=80 2x'
-        }
-      }
-    }
-  ],
-  blog: {
-    title: 'Полезные материалы',
-    description: 'Советы, практики и разборы по вокалу *'
   },
   faq: {
     title: 'Частые вопросы',
@@ -158,7 +57,7 @@ const page = {
           },
           {
             label: 'Где можно следить за новостями школы?',
-            content: 'Больше интересного в <a href="https://t.me/rodinaalexandra" target="_blank">Telegram-канале</a>. Присоединяйтесь! *'
+            slot: 'telegram'
           },
           {
             label: 'Куда отправлять коммерческие предложения?',
@@ -167,12 +66,7 @@ const page = {
           {
             label: 'Сколько длится урок?',
             content: 'Стандартная продолжительность занятия — 60 минут. *'
-          }
-        ]
-      },
-      {
-        title: 'Дополнительно',
-        questions: [
+          },
           {
             label: 'Есть ли пробный формат?',
             content: 'Да, на первом занятии знакомимся, определяем цель и подбираем индивидуальный план развития голоса. *'
@@ -208,7 +102,7 @@ const itemsFormat = ref([
   {
     label: 'Можно ли заниматься онлайн?',
     icon: 'i-lucide-plus',
-    slot: 'online'
+    content: 'Да, занятия проходят онлайн в удобное время по предварительной записи. *'
   }
 ])
 
@@ -216,12 +110,12 @@ const itemsRecord = ref([
   {
     label: 'Как записаться на первое занятие?',
     icon: 'i-lucide-plus',
-    content: 'Записывайтесь на первое занятие: https://t.me/rodinaalexandra'
+    slot: 'link'
   },
   {
     label: 'Где можно следить за новостями школы?',
     icon: 'i-lucide-plus',
-    content: 'Больше интересного в <a href="https://t.me/rodinaalexandra" target="_blank">Telegram-канале</a>. Присоединяйтесь! *'
+    slot: 'telegram'
   }
 ])
 
@@ -246,10 +140,6 @@ const tabs = ref([
   {
     label: 'Запись и условия',
     slot: 'record'
-  },
-  {
-    label: 'Дополнительно',
-    slot: 'additional'
   }
 ])
 </script>
@@ -257,17 +147,12 @@ const tabs = ref([
 <template>
   <UPage class="overflow-x-hidden">
     <LandingHero :page />
-    <UPageSection
-      :ui="{
-        container: 'pt-0! lg:grid lg:grid-cols-2 lg:gap-8'
-      }"
-    >
-      <LandingAbout :page />
-      <LandingWorkExperience :page />
-    </UPageSection>
-    <LandingBlog :page />
-    <LandingTestimonials :page />
-    <!-- <LandingFAQ :page /> -->
+    <LandingAboutMe />
+    <LandingWhyElementary />
+    <LandingPhilosophy />
+    <LandingBonuses />
+    <LandingReviews />
+    <LandingPricing />
 
     <UPageSection title="Частые вопросы">
       <div class="overflow-x-auto">
@@ -292,7 +177,27 @@ const tabs = ref([
                 trigger: 'gap-3',
                 leadingIcon: 'block size-5 shrink-0 text-primary'
               }"
-            />
+            >
+              <template #link>
+                <p>
+                  Записывайтесь на первое занятие: <a
+                    href="https://n2254899.yclients.com"
+                    target="_blank"
+                    class="link"
+                  >к записи</a>
+                </p>
+              </template>
+
+              <template #telegram>
+                <p>
+                  Больше интересного в <a
+                    href="https://t.me/rodinaalexandra"
+                    target="_blank"
+                    class="link"
+                  >Telegram-канале</a>. Присоединяйтесь! *
+                </p>
+              </template>
+            </UAccordion>
           </template>
           <template #additional>
             <UAccordion
