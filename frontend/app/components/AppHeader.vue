@@ -21,12 +21,12 @@ const navLinks: NavigationMenuItem[] = [
     label: 'Распевки',
     icon: 'i-lucide-mic',
     to: '/warm-up'
-  },
-  {
-    label: 'Обо мне',
-    icon: 'i-lucide-user',
-    to: '/about'
   }
+  // {
+  //   label: 'Обо мне',
+  //   icon: 'i-lucide-user',
+  //   to: '/about'
+  // }
 ]
 </script>
 

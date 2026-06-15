@@ -23,13 +23,9 @@
             stroke-linejoin="round"
             class="w-4 h-4 transition-transform translate-y-[2px] duration-200"
             :class="{ 'rotate-180': showDescription }"
-          ><path d="m6 9 6 6 6-6" />
+          >
+            <path d="m6 9 6 6 6-6" />
           </svg>
-          <!-- <UIcon
-            name="i-lucide-chevron-down"
-            class="w-4 h-4 transition-transform translate-y-[2px] duration-200"
-            :class="{ 'rotate-180 translate-y-[2px]': showDescription }"
-          /> -->
         </p>
       </div>
       <div
