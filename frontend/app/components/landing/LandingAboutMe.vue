@@ -30,7 +30,7 @@
       width="352"
       height="647"
       alt="Александра Родина — преподаватель вокала"
-      class="w-full rounded-lg object-cover"
+      class="w-full rounded-lg object-cover max-h-[400px] lg:max-h-none"
       loading="lazy"
     >
   </UPageSection>

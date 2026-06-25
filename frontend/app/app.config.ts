@@ -1,11 +1,11 @@
 export default defineAppConfig({
   global: {
     picture: {
-      dark: '/images/avatar.jpg',
-      light: '/images/avatar.jpg',
+      dark: '/images/avatar.png',
+      light: '/images/avatar.png',
       alt: 'Фото Александры Родиной'
     },
-    meetingLink: 'https://t.me/rodinaalexandra',
+    meetingLink: 'https://t.me/elementaryvocal',
     email: 'Elementaryvocal@ya.ru',
     available: true
   },
@@ -13,6 +13,15 @@ export default defineAppConfig({
     colors: {
       primary: 'green',
       neutral: 'neutral'
+    },
+    button: {
+      compoundVariants: [
+        {
+          color: 'primary',
+          variant: 'solid',
+          class: '!text-white'
+        }
+      ]
     },
     pageHero: {
       slots: {
@@ -23,7 +32,10 @@ export default defineAppConfig({
     }
   },
   footer: {
-    credits: `Built by dem1dov1van • ${new Date().getFullYear()}`,
+    author: {
+      name: 'dem1dov1van',
+      url: 'https://t.me/dem1dov1van'
+    },
     colorMode: false,
     links: [{
       'icon': 'i-simple-icons-youtube',
@@ -43,7 +55,7 @@ export default defineAppConfig({
     },
     {
       'icon': 'i-simple-icons-telegram',
-      'to': 'https://t.me/rodinaalexandra',
+      'to': 'https://t.me/elementaryvocal',
       'target': '_blank',
       'aria-label': 'Наш Telegram'
     }

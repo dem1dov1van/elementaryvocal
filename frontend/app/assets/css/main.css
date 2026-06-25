@@ -7,17 +7,19 @@
   --font-sans: 'Inter Variable', 'Inter', ui-sans-serif, system-ui, sans-serif;
   --font-serif: 'Lora Variable', 'Lora', ui-serif, Georgia, serif;
 
-  --color-green-50: #EFFDF5;
-  --color-green-100: #D9FBE8;
-  --color-green-200: #B3F5D1;
-  --color-green-300: #75EDAE;
-  --color-green-400: #00DC82;
-  --color-green-500: #00C16A;
-  --color-green-600: #00A155;
-  --color-green-700: #007F45;
-  --color-green-800: #016538;
-  --color-green-900: #0A5331;
-  --color-green-950: #052E16;
+  --ui-primary: #53803E;
+
+  --color-green-50: #F1F5F0;
+  --color-green-100: #E3EBE0;
+  --color-green-200: #C8D6C1;
+  --color-green-300: #ACC2A2;
+  --color-green-400: #83A474;
+  --color-green-500: #53803E;
+  --color-green-600: #497137;
+  --color-green-700: #3F612F;
+  --color-green-800: #355228;
+  --color-green-900: #2B4320;
+  --color-green-950: #213319;
 
   --color-red-50: #FEF2F2;
   --color-red-100: #FEE2E2;
@@ -45,8 +47,23 @@
     font-family: var(--font-serif);
     letter-spacing: -0.01em;
   }
+
 }
 
 .link {
   text-decoration: underline;
+}
+
+[data-slot='base'].bg-primary {
+  color: #fff;
+}
+
+.size-18 {
+  width: 200px !important;
+  height: 200px !important;
+
+  @media (min-width: 768px) {
+    width: 375px !important;
+    height: 375px !important;
+  }
 }

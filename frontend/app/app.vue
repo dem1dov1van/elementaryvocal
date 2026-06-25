@@ -32,7 +32,7 @@ useSeoMeta({
 <template>
   <UApp>
     <NuxtLayout>
-      <UMain class="relative">
+      <UMain class="relative flex min-h-0 flex-1 flex-col">
         <NuxtPage />
       </UMain>
     </NuxtLayout>

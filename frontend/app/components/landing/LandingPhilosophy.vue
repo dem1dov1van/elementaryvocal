@@ -28,7 +28,7 @@
       width="600"
       height="450"
       alt="Философия обучения в Elementaryvocal"
-      class="w-full rounded-lg object-cover"
+      class="w-full rounded-lg object-cover max-h-[400px] lg:max-h-none"
       loading="lazy"
     >
   </UPageSection>

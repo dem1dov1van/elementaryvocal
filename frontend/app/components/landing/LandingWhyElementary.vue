@@ -4,7 +4,7 @@
     title="На занятиях достигаем высот"
     orientation="horizontal"
     :ui="{
-      container: 'gap-8 lg:gap-12 !pt-0',
+      container: 'gap-8 lg:gap-12 !pt-0 flex-col-reverse lg:flex-row',
       title: 'text-left text-xl sm:text-2xl lg:text-3xl font-medium',
       description: 'text-left mt-4 text-sm sm:text-base text-muted'
     }"
@@ -44,7 +44,7 @@
       width="600"
       height="450"
       alt="Занятия вокалом в Elementaryvocal"
-      class="w-full rounded-lg object-cover"
+      class="w-full rounded-lg object-cover max-h-[400px] lg:max-h-none"
       loading="lazy"
     >
   </UPageSection>

@@ -12,7 +12,7 @@ const page = {
         label: 'Записаться на занятие',
         to: 'https://n2254899.yclients.com',
         target: '_blank',
-        color: 'neutral'
+        color: 'primary'
       }
     ],
     images: [
@@ -25,59 +25,41 @@ const page = {
       { src: '/images/slider/7.png', alt: 'Фото с занятия 7 *' },
       { src: '/images/slider/8.png', alt: 'Фото с занятия 8 *' },
       { src: '/images/slider/9.png', alt: 'Фото с занятия 9 *' }
+    ],
+    videos: [
+      {
+        src: 'https://www.youtube.com/embed/8SyQkawL2Bc',
+        title: 'YouTube Shorts 1'
+      },
+      {
+        src: 'https://www.youtube.com/embed/A5jTYjskIag',
+        title: 'YouTube Shorts 2'
+      },
+      {
+        src: 'https://www.youtube.com/embed/0RhAR6RC3ZY',
+        title: 'YouTube Shorts 3'
+      },
+      {
+        src: 'https://www.youtube.com/embed/bIrHcqiuAss',
+        title: 'YouTube Shorts 4'
+      },
+      {
+        src: 'https://www.youtube.com/embed/lmYWxkr9Akk',
+        title: 'YouTube Shorts 5'
+      },
+      {
+        src: 'https://www.youtube.com/embed/qSZ540mMYJM',
+        title: 'YouTube Shorts 6'
+      },
+      {
+        src: 'https://www.youtube.com/embed/vhKiqoJT4IY',
+        title: 'YouTube Shorts 7'
+      }
     ]
   },
   faq: {
     title: 'Частые вопросы',
-    description: 'Ответы на вопросы о формате занятий, записи и обучении.',
-    categories: [
-      {
-        title: 'Формат занятий',
-        questions: [
-          {
-            label: 'Кому подойдут занятия?',
-            content: 'Занятия будут полезны как начинающим, так и профессиональным вокалистам.'
-          },
-          {
-            label: 'Что будем делать на уроках?',
-            content: 'На уроках мы работаем над свободным и комфортным звучанием, дыханием, интонацией и подачей материала. *'
-          },
-          {
-            label: 'Можно ли заниматься онлайн?',
-            content: 'Да, занятия проходят онлайн в удобное время по предварительной записи. *'
-          }
-        ]
-      },
-      {
-        title: 'Запись и условия',
-        questions: [
-          {
-            label: 'Как записаться на первое занятие?',
-            content: 'Записывайтесь на первое занятие: https://t.me/rodinaalexandra'
-          },
-          {
-            label: 'Где можно следить за новостями школы?',
-            slot: 'telegram'
-          },
-          {
-            label: 'Куда отправлять коммерческие предложения?',
-            content: 'Коммерческие предложения присылайте на Elementaryvocal@ya.ru'
-          },
-          {
-            label: 'Сколько длится урок?',
-            content: 'Стандартная продолжительность занятия — 60 минут. *'
-          },
-          {
-            label: 'Есть ли пробный формат?',
-            content: 'Да, на первом занятии знакомимся, определяем цель и подбираем индивидуальный план развития голоса. *'
-          },
-          {
-            label: 'Нужна ли музыкальная подготовка?',
-            content: 'Нет, начать можно с любого уровня. Программа подстраивается под ваш текущий опыт. *'
-          }
-        ]
-      }
-    ]
+    description: 'Ответы на вопросы о формате занятий, записи и обучении.'
   }
 }
 
@@ -92,123 +74,102 @@ const itemsFormat = ref([
   {
     label: 'Кому подойдут занятия?',
     icon: 'i-lucide-plus',
-    content: 'Занятия будут полезны как начинающим, так и профессиональным вокалистам.'
+    slot: 'who'
   },
   {
     label: 'Что будем делать на уроках?',
     icon: 'i-lucide-plus',
-    content: 'На уроках мы работаем над свободным и комфортным звучанием, дыханием, интонацией и подачей материала. *'
+    slot: 'lessons'
   },
   {
     label: 'Можно ли заниматься онлайн?',
     icon: 'i-lucide-plus',
-    content: 'Да, занятия проходят онлайн в удобное время по предварительной записи. *'
-  }
-])
-
-const itemsRecord = ref([
-  {
-    label: 'Как записаться на первое занятие?',
-    icon: 'i-lucide-plus',
-    slot: 'link'
-  },
-  {
-    label: 'Где можно следить за новостями школы?',
-    icon: 'i-lucide-plus',
-    slot: 'telegram'
-  }
-])
-
-const itemsAdditional = ref([
-  {
-    label: 'Есть ли пробный формат?',
-    icon: 'i-lucide-plus',
-    content: 'Да, на первом занятии знакомимся, определяем цель и подбираем индивидуальный план развития голоса. *'
-  },
-  {
-    label: 'Нужна ли музыкальная подготовка?',
-    icon: 'i-lucide-plus',
-    content: 'Нет, начать можно с любого уровня. Программа подстраивается под ваш текущий опыт. *'
-  }
-])
-
-const tabs = ref([
-  {
-    label: 'Формат занятий',
-    slot: 'format'
-  },
-  {
-    label: 'Запись и условия',
-    slot: 'record'
+    slot: 'online'
   }
 ])
 </script>
 
 <template>
   <UPage class="overflow-x-hidden">
+    <!-- <MainHero /> -->
     <LandingHero :page />
     <LandingAboutMe />
     <LandingWhyElementary />
     <LandingPhilosophy />
+    <LandingVideoSlider :videos="page.hero.videos" />
     <LandingBonuses />
     <LandingReviews />
     <LandingPricing />
 
     <UPageSection title="Частые вопросы">
       <div class="overflow-x-auto">
-        <UTabs
-          :unmount-on-hide="false"
-          :items="tabs"
-          class="w-full"
+        <UAccordion
+          :items="itemsFormat"
+          :ui="{
+            trigger: 'gap-3',
+            leadingIcon: 'block size-5 shrink-0 text-primary',
+            label: 'lg:text-lg'
+          }"
         >
-          <template #format>
-            <UAccordion
-              :items="itemsFormat"
-              :ui="{
-                trigger: 'gap-3',
-                leadingIcon: 'block size-5 shrink-0 text-primary'
-              }"
-            />
+          <template #who>
+            <div>
+              <p class="text-sm pb-3.5">
+                <span class="font-semibold">Начинающие.</span> Только начинаете? Не&nbsp;знаете, с&nbsp;чего начать? Мы&nbsp;начнём с&nbsp;самого простого: дыхание, опора, первые ноты. Без страха и&nbsp;оценки.
+              </p>
+              <p class="text-sm pb-3.5">
+                <span class="font-semibold">Любители.</span> Поёте в&nbsp;душе, в&nbsp;машине, под гитару? Мечтаете звучать увереннее? Покажем возможности Вашего голоса и&nbsp;добавим техники.
+              </p>
+              <p class="text-sm pb-3.5">
+                <span class="font-semibold">Профессионалы.</span> Уже выступаете или работаете с&nbsp;голосом? Значит готовы к&nbsp;сложным задачам и&nbsp;тонкой настройке. Разберем зажимы, проработаем переходы, регистры и&nbsp;поможем освоить трудные приёмы.
+              </p>
+              <p class="text-sm pb-3.5">
+                <span class="font-semibold">И&nbsp;просто все, кто хочет петь</span>&nbsp;&mdash; никаких условий, только Ваше желание
+              </p>
+            </div>
           </template>
-          <template #record>
-            <UAccordion
-              :items="itemsRecord"
-              :ui="{
-                trigger: 'gap-3',
-                leadingIcon: 'block size-5 shrink-0 text-primary'
-              }"
-            >
-              <template #link>
-                <p>
-                  Записывайтесь на первое занятие: <a
-                    href="https://n2254899.yclients.com"
-                    target="_blank"
-                    class="link"
-                  >к записи</a>
-                </p>
-              </template>
-
-              <template #telegram>
-                <p>
-                  Больше интересного в <a
-                    href="https://t.me/rodinaalexandra"
-                    target="_blank"
-                    class="link"
-                  >Telegram-канале</a>. Присоединяйтесь! *
-                </p>
-              </template>
-            </UAccordion>
+          <template #lessons>
+            <p class="text-sm pb-3.5">
+              В моей школе вокала работаем над разными задачами учеников:
+            </p>
+            <ul class="list-disc ps-5 space-y-1 text-sm">
+              <li>Разбираем репертуар и&nbsp;вокальные техники Ваших любимых исполнителей;</li>
+              <li>Учимся фразировке и&nbsp;динамике (чтобы песня «дышала» и&nbsp;звучала «вкусно»);</li>
+              <li>Готовимся к&nbsp;конкурсам, концертам и&nbsp;записям или просто кайфовать от&nbsp;занятий;</li>
+              <li>Работаем над&nbsp;песнями, которые нравятся именно Вам;</li>
+              <li>Сглаживаем регистры — те самые переходные ноты;</li>
+              <li>Осваиваем современные вокальные приёмы: тванг, микст/край, бэлтинг, фрай — штробас, вибрато, мелизматику;</li>
+              <li>Развиваем музыкальный слух, ритм и&nbsp;уверенное интонирование;</li>
+              <li>Переходим из&nbsp;академа в&nbsp;эстраду деликатно;</li>
+              <li>Ищем причины дисфоний и&nbsp;восстанавливаем голос;</li>
+              <li>Разбираем анатомию, чтобы понять, как работает голос.</li>
+            </ul>
           </template>
-          <template #additional>
-            <UAccordion
-              :items="itemsAdditional"
-              :ui="{
-                trigger: 'gap-3',
-                leadingIcon: 'block size-5 shrink-0 text-primary'
-              }"
-            />
+          <template #online>
+            <p class="text-sm pb-3.5">
+              Да, занятия проходят как офлайн, так и онлайн в удобное время по предварительной записи.
+            </p>
+            <p class="text-sm pb-3.5">
+              Формат офлайн: студия находится в Санкт-Петербурге, в 5 минутах от м. Московские ворота. На студии есть зона ожидания с диваном. Для Вас всегда в наличии горячая вода, чай/кофе, тапочки, туалетная комната. Аренда студии включена в стоимость занятий.
+              А также у нас топовая аппаратура, хорошая звукоизоляция и почти нет соседей😉
+            </p>
+            <p class="text-sm pb-3.5">
+              Формат онлайн: занятия проходят на платформе <a
+                href="https://mooz.pro/ru"
+                target="_blank"
+                class="link"
+              >Mooz</a>
+            </p>
+            <p class="text-sm pb-3.5">
+              Преимущества:
+              <ul class="list-disc ps-5 space-y-1 text-sm">
+                <li>Достаточно чистый звук, минимальная задержка</li>
+                <li>Инструменты внутри приложения (виртуальное пианино, метроном, транспонирование минусовки)</li>
+                <li>У тебя всегда постоянная ссылка для подключения</li>
+                <li>Из любой точки мира с хорошим интернетом</li>
+              </ul>
+            </p>
           </template>
-        </UTabs>
+        </UAccordion>
       </div>
     </UPageSection>
     <MapSection />
