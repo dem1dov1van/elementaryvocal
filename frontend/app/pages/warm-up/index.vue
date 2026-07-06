@@ -175,7 +175,7 @@ const tracks = computed(() => {
     title: record.title,
     src: `${config.public.pocketbaseUrl}/files/${record.collectionId}/${record.id}/${record.audio}`,
     description: record.description,
-    tags: record.tags?.split(' ') ?? []
+    tags: record.tags?.split(', ') ?? []
   }))
 })
 

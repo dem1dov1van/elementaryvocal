@@ -37,6 +37,15 @@ export default defineAppConfig({
       url: 'https://t.me/dem1dov1van'
     },
     colorMode: false,
+    legalLinks: [{
+      label: 'Политика обработки персональных данных',
+      to: '/docs/personal-data-processing-policy.pdf',
+      target: '_blank'
+    }, {
+      label: 'Договор оферты',
+      to: '/docs/offer-agreement.pdf',
+      target: '_blank'
+    }],
     links: [{
       'icon': 'i-simple-icons-youtube',
       'to': 'https://www.youtube.com/@elementaryvocal',
