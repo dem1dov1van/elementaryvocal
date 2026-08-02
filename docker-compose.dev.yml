@@ -8,6 +8,8 @@ services:
       sh -lc "corepack enable
       && pnpm install --frozen-lockfile
       && pnpm dev --host 0.0.0.0 --port 3000"
+    ports:
+      - "3001:3000"
     environment:
       NUXT_PUBLIC_POCKETBASE_URL: ${NUXT_PUBLIC_POCKETBASE_URL:-/api}
       CHOKIDAR_USEPOLLING: "true"

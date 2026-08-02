@@ -2,9 +2,8 @@
   <UPageSection
     orientation="horizontal"
     title="Философия обучения"
-    reverse
     :ui="{
-      container: 'gap-8 lg:gap-12 !pt-0',
+      container: 'gap-8 lg:gap-12 !pt-0 flex-col-reverse lg:flex-row',
       title: 'text-left text-xl sm:text-2xl lg:text-3xl font-medium',
       description: 'text-left mt-4 text-sm sm:text-base text-muted'
     }"

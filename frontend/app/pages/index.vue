@@ -77,11 +77,6 @@ const itemsFormat = ref([
     slot: 'who'
   },
   {
-    label: 'Что будем делать на уроках?',
-    icon: 'i-lucide-plus',
-    slot: 'lessons'
-  },
-  {
     label: 'Можно ли заниматься онлайн?',
     icon: 'i-lucide-plus',
     slot: 'online'
@@ -95,6 +90,7 @@ const itemsFormat = ref([
     <LandingHero :page />
     <LandingAboutMe />
     <LandingWhyElementary />
+    <LandingHelp />
     <LandingPhilosophy />
     <LandingVideoSlider :videos="page.hero.videos" />
     <LandingBonuses />
@@ -126,23 +122,6 @@ const itemsFormat = ref([
                 <span class="font-semibold">И&nbsp;просто все, кто хочет петь</span>&nbsp;&mdash; никаких условий, только Ваше желание
               </p>
             </div>
-          </template>
-          <template #lessons>
-            <p class="text-sm pb-3.5">
-              В моей школе вокала работаем над разными задачами учеников:
-            </p>
-            <ul class="list-disc ps-5 space-y-1 text-sm">
-              <li>Разбираем репертуар и&nbsp;вокальные техники Ваших любимых исполнителей;</li>
-              <li>Учимся фразировке и&nbsp;динамике (чтобы песня «дышала» и&nbsp;звучала «вкусно»);</li>
-              <li>Готовимся к&nbsp;конкурсам, концертам и&nbsp;записям или просто кайфовать от&nbsp;занятий;</li>
-              <li>Работаем над&nbsp;песнями, которые нравятся именно Вам;</li>
-              <li>Сглаживаем регистры — те самые переходные ноты;</li>
-              <li>Осваиваем современные вокальные приёмы: тванг, микст/край, бэлтинг, фрай — штробас, вибрато, мелизматику;</li>
-              <li>Развиваем музыкальный слух, ритм и&nbsp;уверенное интонирование;</li>
-              <li>Переходим из&nbsp;академа в&nbsp;эстраду деликатно;</li>
-              <li>Ищем причины дисфоний и&nbsp;восстанавливаем голос;</li>
-              <li>Разбираем анатомию, чтобы понять, как работает голос.</li>
-            </ul>
           </template>
           <template #online>
             <p class="text-sm pb-3.5">
