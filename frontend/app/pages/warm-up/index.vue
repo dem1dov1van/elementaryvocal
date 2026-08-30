@@ -20,13 +20,13 @@
     />
 
     <AppContainer class="!pt-0">
-      <div class="min-w-full max-w-[600px] mx-auto">
+      <div class="min-w-full mx-auto max-w-full md:max-w-[600px]">
         <p v-if="pending">
           Загружаем распевки...
         </p>
 
         <template v-else-if="warmUpResponse">
-          <div class="max-w-[100%] w-full mx-auto p-4">
+          <div class="max-w-[100%] w-full mx-auto max-w-full md">
             <UFieldGroup
               orientation="horizontal"
               size="xl"
@@ -132,7 +132,7 @@ type WarmUpResponse = {
 
 const config = useRuntimeConfig()
 const apiBase = import.meta.server
-  ? 'http://pocketbase:8090/api'
+  ? config.pocketbaseInternalUrl
   : config.public.pocketbaseUrl
 
 const { data: warmUpResponse, pending, error } = await useAsyncData<WarmUpResponse>(

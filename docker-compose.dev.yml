@@ -11,7 +11,8 @@ services:
     ports:
       - "3001:3000"
     environment:
-      NUXT_PUBLIC_POCKETBASE_URL: ${NUXT_PUBLIC_POCKETBASE_URL:-/api}
+      NUXT_PUBLIC_POCKETBASE_URL: ${NUXT_PUBLIC_POCKETBASE_URL:-https://elementaryvocal.ru/api}
+      NUXT_POCKETBASE_INTERNAL_URL: ${NUXT_POCKETBASE_INTERNAL_URL:-https://elementaryvocal.ru/api}
       CHOKIDAR_USEPOLLING: "true"
       WATCHPACK_POLLING: "true"
     volumes:

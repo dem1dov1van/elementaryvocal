@@ -16,6 +16,7 @@ export default defineNuxtConfig({
   },
 
   runtimeConfig: {
+    pocketbaseInternalUrl: 'http://pocketbase:8090/api',
     public: {
       pocketbaseUrl: '/api'
     }

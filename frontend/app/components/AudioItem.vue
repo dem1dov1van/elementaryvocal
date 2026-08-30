@@ -1,8 +1,8 @@
 <template>
-  <div class="flex flex-col gap-4 p-4 transition hover:shadow-md ">
+  <div class="flex flex-col gap-4 md:p-4 py-4 transition hover:shadow-md ">
     <div class="px-5">
-      <div class="flex items-center justify-between gap-2">
-        <h4 class="truncate text-lg font-semibold text-gray-900 dark:text-white">
+      <div class="flex items-baseline justify-between gap-2">
+        <h4 class="text-lg font-semibold text-gray-900 dark:text-white">
           {{ track.title }}
         </h4>
 

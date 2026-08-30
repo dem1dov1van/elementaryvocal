@@ -6,6 +6,7 @@ services:
     restart: unless-stopped
     environment:
       NUXT_PUBLIC_POCKETBASE_URL: ${NUXT_PUBLIC_POCKETBASE_URL:-/api}
+      NUXT_POCKETBASE_INTERNAL_URL: ${NUXT_POCKETBASE_INTERNAL_URL:-http://pocketbase:8090/api}
 
   pocketbase:
     image: ghcr.io/muchobien/pocketbase:latest
