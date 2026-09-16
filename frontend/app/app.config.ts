@@ -6,6 +6,7 @@ export default defineAppConfig({
       alt: 'Фото Александры Родиной'
     },
     meetingLink: 'https://t.me/elementaryvocal',
+    bookingLink: 'https://n2254899.yclients.ru',
     email: 'Elementaryvocal@ya.ru',
     available: true
   },

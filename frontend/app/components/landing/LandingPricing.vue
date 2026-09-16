@@ -1,4 +1,7 @@
 <script setup lang="ts">
+const { global } = useAppConfig()
+const bookingLink = global.bookingLink
+
 const plans = [
   {
     title: 'Академический час',
@@ -44,7 +47,7 @@ const plans = [
     <div class="flex justify-center">
       <UButton
         label="Записаться на занятие"
-        to="https://n2254899.yclients.com"
+        :to="bookingLink"
         target="_blank"
         size="xl"
         color="primary"

@@ -1,4 +1,6 @@
 <script setup lang="ts">
+const { global } = useAppConfig()
+
 const page = {
   seo: {
     title: 'Школа вокала Александры Родиной — Elementaryvocal',
@@ -10,7 +12,7 @@ const page = {
     links: [
       {
         label: 'Записаться на занятие',
-        to: 'https://n2254899.yclients.com',
+        to: global.bookingLink,
         target: '_blank',
         color: 'primary'
       }

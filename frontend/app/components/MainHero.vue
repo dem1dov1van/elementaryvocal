@@ -9,7 +9,7 @@
       </p>
       <UButton
         label="Записаться на занятие"
-        to="https://n2254899.yclients.com"
+        :to="bookingLink"
         target="_blank"
         color="neutral"
         class="max-w-max mt-4"
@@ -20,7 +20,8 @@
 </template>
 
 <script setup lang="ts">
-
+const { global } = useAppConfig()
+const bookingLink = global.bookingLink
 </script>
 
 <style scoped>

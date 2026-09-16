@@ -5,7 +5,7 @@
       description="Практические упражнения для разогрева голоса перед занятием, репетицией или выступлением."
       :links="[{
         label: 'Записаться на занятие',
-        to: 'https://n2254899.yclients.com',
+        to: bookingLink,
         target: '_blank',
         size: 'xl'
       }, {
@@ -117,6 +117,9 @@
 </template>
 
 <script setup lang="ts">
+const { global } = useAppConfig()
+const bookingLink = global.bookingLink
+
 type WarmUpRecord = {
   id: string
   collectionId: string
